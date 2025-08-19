@@ -8,13 +8,13 @@ Tested step sizes: 50, 10, 5, 1, 0.1, $10^{-6}$ Mpc. All resolve the Larmor radi
 The start of the trajectory of the electron for various max step sizes:
 ![Beginning part of the trajectory of a 110 MeV electron at redshift 0.1 in the magnetic field. The trajectory is confined to a cube centered at (0, 0, 0) with each side of length 2e-5 Mpc. One trajectory is shown per max step size. The maximum tracked trajectory was 0.001 Mpc. The trajectories overlap.](output/trajectory_compare/z0.1/traj_0.001Mpc/stack/bp/start_trajectory3d_prim.png)
 
-The end of the trajectory of the electron for various max step sizes (the Larmor radius is resolved but the trajectories are out of phase):
+The end of the trajectory of the electron for various max step sizes (the Larmor radius is resolved and the trajectories are out of phase):
 ![Last part of the trajectory of a 110 MeV electron at redshift 0.1 in the magnetic field. The last 200 steps of the trajectory are shown. One trajectory is shown per max step size. The maximum tracked trajectory was 0.001 Mpc. The trajectories overlap.](output/trajectory_compare/z0.1/traj_0.001Mpc/stack/bp/end_trajectory3d_prim_n200.png)
 
 The full trajectory (the maximum tracked trajectory is 1 Mpc):
 ![The full 1 Mpc trajectory of a 110 MeV electron at redshift 0.1 in the magnetic field. One trajectory is shown per max step size. The trajectories are overlapping straight lines because on these scales the gyromotion cannot be resolved](output/trajectory_compare/z0.1/traj_1Mpc/stack/bp/full_trajectory3d_prim.png)
 
-Near the end of the trajectory, where $r = \sqrt{x^2 + y^2 + z^2}$ the Larmor radius is somewhat resolved but the trajectories are out of phase:
+Near the end of the trajectory, where $r = \sqrt{x^2 + y^2 + z^2}$ the Larmor radius is somewhat resolve, and the trajectories are out of phase:
 ![Snippet of 1 Mpc trajectory of a 110 MeV electron at redshift 0.1 in the magnetic field. One trajectory is shown per max step size.](output/trajectory_compare/z0.1/traj_1Mpc/stack/bp/trajectory3d_prim_0.5_to_0.5003.png)
 
 Just one of the lines on the plot above is shown below:
