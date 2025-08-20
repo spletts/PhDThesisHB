@@ -23,9 +23,9 @@ Just one of the lines on the plot above is shown below:
 
 Tracking a trajectory of 50 Mpc (which is the grid cell size):
 Max step size 1 Mpc:
-![Last 5000 steps of 50 Mpc trajectory of a 110 MeV electron at redshift 0.1 in the magnetic field. One trajectory is shown, for max step size of 1 Mpc.](output/electrons/z0.1/inj1/delta/0.00011TeV/bamp1e-13G/ck/tol1e-09/iter0/set_cosmo/max_traj_50Mpc/max_step_1Mpc/grid_5.0e+01Mpc/end_trajectory3d_prim_n5000.png)
-![Last 200 steps of 50 Mpc trajectory of a 110 MeV electron at redshift 0.1 in the magnetic field. One trajectory is shown, for max step size of 1 Mpc.](output/electrons/z0.1/inj1/delta/0.00011TeV/bamp1e-13G/ck/tol1e-09/iter0/set_cosmo/max_traj_50Mpc/max_step_1Mpc/grid_5.0e+01Mpc/end_trajectory3d_prim_n200.png)
+![Last 10000 steps of 50 Mpc trajectory of a 110 MeV electron at redshift 0.1 in the magnetic field. One trajectory is shown, for max step size of 1 Mpc.](output/electrons/z0.1/inj1/delta/0.00011TeV/bamp1e-13G/bp/tol1e-09/iter0/set_cosmo/max_traj_50Mpc/max_step_1Mpc/grid_5.0e+01Mpc/end_trajectory3d_prim_n10000.png)
+![Last 200 steps of 50 Mpc trajectory of a 110 MeV electron at redshift 0.1 in the magnetic field. One trajectory is shown, for max step size of 1 Mpc.](output/electrons/z0.1/inj1/delta/0.00011TeV/bamp1e-13G/bp/tol1e-09/iter0/set_cosmo/max_traj_50Mpc/max_step_1Mpc/grid_5.0e+01Mpc/end_trajectory3d_prim_n200.png)
 
 Max step size 50 Mpc:
-![Last 5000 steps of 50 Mpc trajectory of a 110 MeV electron at redshift 0.1 in the magnetic field. One trajectory is shown, for max step size of 50 Mpc.](output/electrons/z0.1/inj1/delta/0.00011TeV/bamp1e-13G/ck/tol1e-09/iter0/set_cosmo/max_traj_50Mpc/max_step_50Mpc/grid_5.0e+01Mpc/end_trajectory3d_prim_n5000.png)
-![Last 200 steps of 50 Mpc trajectory of a 110 MeV electron at redshift 0.1 in the magnetic field. One trajectory is shown, for max step size of 50 Mpc.](output/electrons/z0.1/inj1/delta/0.00011TeV/bamp1e-13G/ck/tol1e-09/iter0/set_cosmo/max_traj_50Mpc/max_step_50Mpc/grid_5.0e+01Mpc/end_trajectory3d_prim_n200.png)
+![Last 10000 steps of 50 Mpc trajectory of a 110 MeV electron at redshift 0.1 in the magnetic field. One trajectory is shown, for max step size of 50 Mpc.](output/electrons/z0.1/inj1/delta/0.00011TeV/bamp1e-13G/bp/tol1e-09/iter0/set_cosmo/max_traj_50Mpc/max_step_50Mpc/grid_5.0e+01Mpc/end_trajectory3d_prim_n10000.png)
+![Last 200 steps of 50 Mpc trajectory of a 110 MeV electron at redshift 0.1 in the magnetic field. One trajectory is shown, for max step size of 50 Mpc.](output/electrons/z0.1/inj1/delta/0.00011TeV/bamp1e-13G/bp/tol1e-09/iter0/set_cosmo/max_traj_50Mpc/max_step_50Mpc/grid_5.0e+01Mpc/end_trajectory3d_prim_n200.png)
