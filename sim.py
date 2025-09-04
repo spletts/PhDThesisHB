@@ -20,17 +20,17 @@ BAMP = 1e-13
 # Inject 1 particle (no need to track more than 1 particle trajectory)
 NINJ = 1
 # Redshift. Note this impacts the photon background fields and magnetic field etc due to comoving coordinates and/or evolution 
-REDSHIFTS = [0.1, 0.4, 0.7]
-# Max step sizes in Mpc
-MAX_STEP_MPC = [50, 10, 5, 1, 0.1, 1e-6]
-# Units: eV. 110 MeV is just above breaking condition of 1e8 eV
+REDSHIFTS = [0.1]  # [0.1, 0.4, 0.7]
+# Max step sizes in Mpc. For 1 TeV electron, the Larmor radius is about 1e-2
+MAX_STEP_MPC = [50, 1, 1e-6]  # [50, 10, 5, 1, 0.1, 1e-6]
+# Units: eV. 110 MeV is just above breaking condition of 1e8 eV. The highest energy *photons* injected ar 1e13 eV (~10 TeV), may split energy in half via pair production
 E_INJ = 1.1e8
 # Limits for magnetic field plot, in Mpc
 B_AXLIMS = 2e-5
 # Max trajectory to trace in Mpc
 # This can be less than mean free path (not interested in interactions, just charged particle spiraling in B field), and 
 # also small enough to resolve the Larmor radius (long trajectory distance can swamp out the tight spiral in a plot), or make a cut in `plot_trajectory.py` to resolve spiral (~2e-5 Mpc)
-MAX_TRAJ_MPC = [0.001, 1]
+MAX_TRAJ_MPC = [1]  # [5, 1, 0.1]  # [0.001, 1]
 # Tolerance (units: kpc?)
 TOL = 1e-9
 
@@ -87,7 +87,7 @@ def create_source(redshift, pid, inj_powlaw, delta_einj_list=None, src_loc=ORIGI
     source.add(SourceRedshift(redshift))
     source.add(SourceParticleType(pid))
 
-    source.add(SourceEmissionCone(Vector3d(1, 0, 0), np.deg2rad(0.1)))
+    source.add(SourceEmissionCone(Vector3d(1, 1, 0), np.deg2rad(0.1)))
 
     if inj_powlaw:
         # TODO update this function if using powerlaw
@@ -118,6 +118,8 @@ def get_outdir(pid, num_inj, redshift, powlaw_bool, bamp, max_step_mpc, cell_len
         delta_einj = delta_einj_list[0]
         odir = os.path.join("output", 
                             pid_dict[pid], 
+                            "break_energy",
+                            "bx",
                             f"z{redshift}", 
                             f"inj{num_inj}",
                             powlaw_dict[powlaw_bool],
@@ -135,6 +137,7 @@ def get_outdir(pid, num_inj, redshift, powlaw_bool, bamp, max_step_mpc, cell_len
         string_list = [str(f"{item/1e12}") for item in delta_einj_list]
         odir = os.path.join("output", 
                             pid_dict[pid], 
+                            "break_energy",
                             f"z{redshift}", 
                             f"inj{num_inj}",
                             powlaw_dict[powlaw_bool],
@@ -332,7 +335,7 @@ def simcrpropa_main(redshift,
 
     # Remember to close files
     if sim_event3d:
-        output.close()
+        output_3d.close()
     if sim_trajectory3d:
         output_traj.close()
     if sim_detect_all_event3d:
@@ -419,10 +422,10 @@ def initFixedDirectionField(vgrid, Bamplitude):
         for yi in range(0,ny):
             for zi in range(0,nz):
                 vect3d = vgrid.get(xi,yi,zi)
-                # The direction of the source cone is +x
-                x = 1 
-                y = 1
-                z = 1
+                # The direction of the source cone is +x, +y
+                x = 1
+                y = 0
+                z = 0
                 d = np.sqrt(x*x+y*y+z*z)
                 # Unit vectors
                 vect3d.x = Bamplitude * x/d
@@ -469,7 +472,7 @@ if __name__ == "__main__":
             for max_traj in MAX_TRAJ_MPC:
                 for z in REDSHIFTS:
                     # Use BP (True), and then CK (False)
-                    for bp in [False]:
+                    for bp in [True]:
                         simcrpropa_main(redshift=z, 
                                         pid=PID, 
                                         max_step_mpc=max_step, 
